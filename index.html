@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fensu Lix</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Orbitron:wght@600&family=Roboto+Mono:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body.overflow-hidden {
+      overflow: hidden;
+    }
+
+    #curtain {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: black;
+      z-index: 9999;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      animation: curtainOpen 1s ease 20s forwards;
+    }
+
+    #curtain h1 {
+      color: white;
+      font-size: 2.5rem;
+      opacity: 0;
+      animation: fadeText 3s ease-in-out forwards;
+    }
+
+    #iq-screen {
+      color: white;
+      font-size: 1.2rem;
+      margin-top: 20px;
+      opacity: 0;
+      animation: fadeIQ 3s ease-in-out 3s forwards;
+      text-align: center;
+    }
+
+    .iq-reveal {
+      font-family: 'Roboto Mono', monospace;
+      font-size: 1.8rem;
+      color: #00ffcc;
+      animation: fadeInIQ 2s ease forwards;
+    }
+
+    @keyframes fadeText {
+      0% { opacity: 0; transform: scale(0.8); }
+      20% { opacity: 1; transform: scale(1); }
+      80% { opacity: 1; transform: scale(1); }
+      100% { opacity: 0; transform: scale(1.1); }
+    }
+
+    @keyframes fadeIQ {
+      0% { opacity: 0; }
+      20% { opacity: 1; }
+      90% { opacity: 1; }
+      100% { opacity: 1; }
+    }
+
+    @keyframes fadeInIQ {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes curtainOpen {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-100%); }
+    }
+
+    .reveal-content {
+      opacity: 0;
+      animation: fadeIn 1.5s ease forwards;
+      animation-delay: 21s;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .tooltip {
+      position: relative;
+      cursor: pointer;
+    }
+
+    .tooltip::after {
+      content: attr(data-tooltip);
+      position: absolute;
+      bottom: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #333;
+      color: #fff;
+      padding: 5px;
+      font-size: 0.8rem;
+      white-space: nowrap;
+      border-radius: 4px;
+      opacity: 0;
+      pointer-events: none;
+      transition: 0.3s;
+    }
+
+    .tooltip:hover::after {
+      opacity: 1;
+    }
+
+    #easter-egg {
+      font-size: 0.7rem;
+      color: gray;
+      cursor: pointer;
+      text-align: center;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body class="overflow-hidden">
+  <div id="curtain">
+    <h1>Welcome to Fensu Lix's World</h1>
+    <div id="iq-screen">Menghitung IQ pengunjung...</div>
+  </div>
+
+  <div class="reveal-content">
+    <header>
+      <div class="overlay tooltip" data-tooltip="Ini muka orang yang begadang ngerjain tugas sambil overthinking.">
+        <img src="profile.jpg" alt="Fensu Lix">
+        <h1>Fensu Lix</h1>
+        <p class="tagline">Mahasiswa Psikologi | Edukator & Entertainer | Raja Sarkas Nasional</p>
+      </div>
+    </header>
+<section class="tes-ngawur">
+  <h2>Tes Kepribadian Ngawur</h2>
+  <div id="quiz-container">
+    <button id="start-quiz">Mulai Tes</button>
+  </div>
+</section>
+    <main>
+      <section class="bio">
+        <h2>Tentang Saya</h2>
+        <p>Gue mahasiswa Psikologi yang demen ngulik isi kepala orang lain, sambil ngelucu dikit-dikit biar gak terlalu depresi mikirin hidup. Aktif di konten edukasi dan hiburan — kadang serius, kadang receh, tapi selalu ada otaknya (dikit).</p>
+      </section>
+
+      <section class="quote tooltip" data-tooltip="Quote ini kelihatan bijak, padahal hasil berak sambil scroll tiktok.">
+        <blockquote>“Kalau hidup udah chaos, minimal kita bisa bikin orang lain ketawa sambil mikir.”</blockquote>
+      </section>
+
+      <section class="sosmed">
+        <h2>Temui Saya di:</h2>
+        <div class="links">
+          <a href="https://www.youtube.com/@fensulix" class="yt">YouTube (Hiburan)</a>
+          <a href="https://www.youtube.com/@fensulix" class="yt">YouTube (Edukasi)</a>
+          <a href="https://www.instagram.com/fensulix/" class="ig">Instagram (Hiburan)</a>
+          <a href="https://instagram.com/fensuder" class="ig">Instagram (Edukasi)</a>
+          <a href="https://twitter.com/fensulix" class="tw">Twitter</a>
+        </div>
+        <div id="easter-egg">Klik aku kalau berani...</div>
+      </section>
+    </main>
+  </div>
+
+    <script>
+    const iqScreen = document.getElementById('iq-screen');
+    const curtain = document.getElementById('curtain');
+
+    setTimeout(() => {
+      let steps = [
+        'Mengakses jaringan otak...',
+        'Menstimulasi neuron virtual...',
+        'Membandingkan hasil dengan kecoa...',
+        'Menyesuaikan standar nasional IQ Indonesia...',
+        'Kalkulasi hampir selesai...'
+      ];
+
+      let index = 0;
+      let interval = setInterval(() => {
+        if (index < steps.length) {
+          iqScreen.textContent = steps[index];
+          iqScreen.style.opacity = 0.7;
+          iqScreen.style.transition = 'opacity 0.5s ease';
+          setTimeout(() => { iqScreen.style.opacity = 1; }, 100);
+          index++;
+        } else {
+          clearInterval(interval);
+          setTimeout(() => {
+            iqScreen.textContent = 'Membuka hasil...';
+            setTimeout(() => {
+              let iq = Math.floor(Math.random() * 40) + 59; // 59-98
+              iqScreen.innerHTML = `<div class='iq-reveal'>IQ kamu adalah ${iq}... kayaknya.</div>`;
+            }, 2000);
+          }, 2000);
+        }
+      }, 1800);
+    }, 3000);
+
+    setTimeout(() => {
+      document.body.classList.remove('overflow-hidden');
+    }, 21000);
+
+    document.getElementById('easter-egg').addEventListener('click', () => {
+      alert('Selamat! Kamu baru buang waktu 3 detik cuma buat ini.');
+    });
+  </script>
+  <!-- Suntik script.js biar tes kepribadian aktif -->
+  <script src="script.js"></script>
+</body>
+</html>
