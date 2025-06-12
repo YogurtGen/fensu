@@ -119,4 +119,11 @@ section {
   font-style: italic;
 }
 
+html, body {
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
 
+,:before, *:after {
+  box-sizing: inherit;
+}
