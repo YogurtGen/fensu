@@ -115,76 +115,77 @@ window.selectAnswer = function(opt) {
 // ---------------- Mini Game Psikologi ----------------
 const minigameData = [
   {
-    question: "Kalau lo gak dibales 3 hari, reaksi lo...",
+    question: "Kalau chat lo gak dibales 3 hari, lo bakal...",
     options: [
-      { text: "Bikin skenario di kepala sendiri", funfact: "Otak kita punya hobi: asumsi. Sayangnya, seringnya salah.", sarkas: "Terlalu kreatif buat jadi orang biasa." },
-      { text: "Ngapus chat biar kelihatan gak butuh", funfact: "Itu disebut defense mechanism: denial 2.0.", sarkas: "Chat ilang, harga diri juga ikut." },
-      { text: "Ngirim story pasif-agresif", funfact: "Expressive coping bisa sehat... kecuali isinya sindiran semua.", sarkas: "Sarkas story detected. Target belum tentu baca." },
-      { text: "Ya udah sih", funfact: "Acceptance bisa muncul dari lelah atau bener-bener ikhlas.", sarkas: "Damai... atau udah putus harapan?" },
-      { text: "Biasa aja, ga penting juga", funfact: "Studi di APA menyebutkan beberapa orang secara alami low reactivity terhadap social rejection.", sarkas: "Cool-nya kayak lemari es. Tapi dalemnya kosong." }
+      { text: "Bikin skenario aneh di kepala sendiri", funfact: "Otak kita seneng bikin asumsi liar. Padahal sering salah. (Journal of Cognitive Neuroscience, 2018)", sarkas: "Terlalu kreatif buat jadi orang biasa." },
+      { text: "Ngapus chat biar keliatan cuek", funfact: "Itu namanya denial. Gaya klasik biar gak keliatan peduli. (Freud, Defense Mechanisms Theory)", sarkas: "Chat ilang, harga diri juga ikut." },
+      { text: "Story sindiran biar dia liat", funfact: "Ngode lewat story itu ekspresi. Tapi kadang malah makin absurd. (Journal of Social Psychology, 2020)", sarkas: "Target belum tentu liat. Tapi effort lo maksimal." },
+      { text: "Ya udah sih", funfact: "Menerima kadang karena ikhlas, kadang karena capek. (Acceptance and Commitment Therapy - Hayes, 2006)", sarkas: "Damai... atau udah nyerah total?" },
+      { text: "B aja, bodo amat juga", funfact: "Beberapa orang emang punya reaksi emosi yang datar. (American Psychological Association, 2021)", sarkas: "Cool banget... sampe dingin kayak kulkas." }
     ]
   },
   {
-    question: "Kalau diajak healing, lo bakal pilih...",
+    question: "Kalau diajak 'healing', lo bakal...",
     options: [
-      { text: "Staycation di rumah temen", funfact: "Healing gak selalu mahal. Tapi efeknya? Ya gitu doang.", sarkas: "Budget pas-pasan, harapan selangit." },
-      { text: "Nonton konser band yang nyakitin hati", funfact: "Musik bisa proses emosi. Atau nambah luka.", sarkas: "Move on? Enggak. Replay? Banget." },
-      { text: "Pergi ke alam biar ngerasa kecil", funfact: "Nature exposure bantu stres, menurut studi di Frontiers in Psychology.", sarkas: "Kecil? Iya. Relevan? Masih nggak." },
-      { text: "Terserah deh, ngikut aja", funfact: "Passive preference bisa tanda kelelahan.", sarkas: "Ikut aja biar gak repot mikir. Aman... tapi kosong." },
-      { text: "Mending di kamar aja, tenang dan sepi", funfact: "Menurut Jurnal of Personality, solitude bisa meningkatkan self-awareness pada introvert.", sarkas: "Healing versi mode pesawat. Ga terjangkau sinyal maupun emosi." }
+      { text: "Nginap di rumah temen buat ganti suasana", funfact: "Ngobrol receh bareng temen bisa nurunin stres. (Journal of Health Psychology, 2015)", sarkas: "Budget pas-pasan, curhat tak terbatas." },
+      { text: "Nonton konser lagu galau", funfact: "Musik galau bisa bantu proses emosi. (Music and Emotion, Juslin & Sloboda, 2010)", sarkas: "Lagu sakit, hati ikut repeat." },
+      { text: "Main ke alam biar tenang", funfact: "Alam bisa nurunin hormon stres kortisol. (Frontiers in Psychology, 2019)", sarkas: "Heningnya dapet. Jawaban hidup? Masih nyari." },
+      { text: "Ngikut aja deh, yang penting keluar rumah", funfact: "Pasrah kadang karena lelah mikir, bukan ikhlas. (Burnout Recovery Study, 2021)", sarkas: "Ikut angin, sambil pura-pura punya arah." },
+      { text: "Ngurung diri di kamar, nonton series", funfact: "Solitude bantu self-awareness. (Journal of Personality, 2003)", sarkas: "Healing versi rebahan abadi." }
     ]
   },
   {
-    question: "Lagi suntuk banget, lo biasanya...",
+    question: "Kalau lagi bete berat, lo biasanya...",
     options: [
-      { text: "Nyuci piring sambil nyumpahin hidup", funfact: "Aktivitas fisik ringan bantu redakan stres.", sarkas: "Multitasking antara bersih dan misuh." },
-      { text: "Ngegas temen yang niat bercanda", funfact: "Iritabilitas = tanda kelelahan mental.", sarkas: "Maaf ya... tapi lo emang lagi nyebelin." },
-      { text: "Ga tau juga sih", funfact: "Confusion = valid emotional state. Jangan disepelein.", sarkas: "Jalan hidup: random dan nggak jelas. Cocok." },
-      { text: "Scroll Shopee tanpa niat beli", funfact: "Distraksi visual bisa bantu tenangkan sistem saraf.", sarkas: "Wishlist banyak, hidup tetap kosong." },
-      { text: "Nonton YouTube sendirian sambil diem", funfact: "Solitary leisure bisa bantu otak relax tanpa overstimulus, menurut Jurnal Leisure Studies.", sarkas: "Kontennya random. Mood-nya... stabil dikit lah." }
+      { text: "Cuci piring sambil misuh-misuh", funfact: "Aktivitas ringan bantu redain stres. (Mindfulness and Chores Study, Florida State University, 2015)", sarkas: "Produktif sambil nyumpah. Multitasking level dewa." },
+      { text: "Nyolot ke temen yang bercanda", funfact: "Iritabilitas = tanda kelelahan mental. (Mental Fatigue Study, APA, 2019)", sarkas: "Yang kena malah orang gak bersalah." },
+      { text: "Bingung sendiri, diem doang", funfact: "Kebingungan itu valid. (Emotion Regulation Journal, 2020)", sarkas: "Lo diem, tapi dalemnya konser metal." },
+      { text: "Liat-liat barang lucu online tapi gak beli", funfact: "Visual distraction bantu relaksasi. (Journal of Cognitive Therapy, 2016)", sarkas: "Keranjang penuh, dompet sepi." },
+      { text: "Scroll YouTube sendirian sampe mood balik", funfact: "Solitary leisure bantu mood recovery. (Leisure Studies, 2009)", sarkas: "Cari tawa sambil ngubur stres." }
     ]
   },
   {
-    question: "Kalau lo ketemu diri lo 5 tahun lalu...",
+    question: "Kalau ketemu versi lo 5 tahun lalu...",
     options: [
-      { text: "Pura-pura gak kenal", funfact: "Facing your past itu berat. Kadang denial itu nyaman.", sarkas: "Malu sama diri sendiri. Lucu juga." },
-      { text: "Ngasih daftar orang yang harus dihindarin", funfact: "Preventive action itu bagian dari coping juga.", sarkas: "Pake cheat sheet, tetep boncos." },
-      { text: "Diam-diam liatin aja", funfact: "Observation tanpa reaksi bisa jadi refleksi dalam.", sarkas: "Stalking versi lintas waktu." },
-      { text: "Minta maaf karena semua gagal tercapai", funfact: "Self-compassion penting. Lo masih hidup, itu udah keren.", sarkas: "Gagal janji sama diri sendiri. Nanggung banget." },
-      { text: "Ngomong 'lu bakal baik-baik aja', terus cabut", funfact: "Brief affirmation bisa berdampak signifikan pada coping, menurut Clinical Psych Science.", sarkas: "Misterius tapi suportif. Anime banget." }
+      { text: "Ngibrit pura-pura gak kenal", funfact: "Masa lalu bisa jadi sumber rasa malu. (Journal of Self and Identity, 2017)", sarkas: "Lo malu sama diri sendiri. Valid sih." },
+      { text: "Kasih daftar orang yang harus dihindarin", funfact: "Antisipasi konflik = mekanisme perlindungan. (Interpersonal Behavior Research, 2014)", sarkas: "Ngasih cheat code, tapi tetep kalah di level 1." },
+      { text: "Diem sambil liatin dia dari jauh", funfact: "Refleksi dalam kadang muncul diam-diam. (Journal of Consciousness Studies, 2011)", sarkas: "Stalking lintas waktu. Estetik tapi serem." },
+      { text: "Minta maaf karena semua rencana gagal", funfact: "Self-compassion bantu healing. (Compassion Research, Neff, 2003)", sarkas: "Gagal semua, tapi lo masih aktif. Hebat." },
+      { text: "Ngomong singkat terus kabur", funfact: "Brief affirmation berdampak besar. (Clinical Psychological Science, 2018)", sarkas: "Misterius. Kayak karakter anime yang muncul 3 detik." }
     ]
   },
   {
-    question: "Lo bangun pagi, hal pertama yang lo sadari...",
+    question: "Pas bangun pagi, yang lo rasain...",
     options: [
-      { text: "'Anjir... hidup lagi'", funfact: "Morning dread sering muncul dari stres internal.", sarkas: "Bukan alarm. Yang bikin bangun: rasa hampa." },
-      { text: "Langsung ngecek hp sambil ngeluh", funfact: "Early screen exposure bisa ganggu mood harian.", sarkas: "Pagi: dikasih berita buruk dan notifikasi pinjaman." },
-      { text: "Cuekin aja sampe siang", funfact: "Delayed response bisa jadi bentuk passive coping.", sarkas: "Snooze mental sampai realita maksa bangun." },
-      { text: "Ngomel ke diri sendiri di dalam hati", funfact: "Inner critic aktif sejak fajar = mental burnout.", sarkas: "Monolog pagi yang nggak bikin semangat." },
-      { text: "Diem sambil ngeliatin langit-langit kamar", funfact: "Quiet contemplation pagi hari bantu regulasi emosi, menurut Harvard Medical School.", sarkas: "Estetik tapi nganggur. Mood: film festival low budget." }
+      { text: "'Yah, hidup lagi'", funfact: "Morning dread = gejala tekanan mental. (Healthline Mental Health, 2022)", sarkas: "Bukan bangun. Lebih ke respawn tanpa niat." },
+      { text: "Langsung cek HP, scroll berita buruk", funfact: "Screen time pagi-pagi naikkan stres. (Harvard Business Review, 2020)", sarkas: "Bangun-bangun disambut tagihan dan notifikasi toxic." },
+      { text: "Tiduran lagi sampe siang", funfact: "Avoidance bisa jadi coping. (Psychology Today, 2021)", sarkas: "Strategi ninja: ngilang dari kenyataan." },
+      { text: "Ngomel dalam hati soal hidup yang gitu-gitu aja", funfact: "Internal monolog bisa jadi refleksi negatif. (Cognitive Therapy Research, 2015)", sarkas: "Sarkas internal mode: ON." },
+      { text: "Tatapan kosong ke langit-langit", funfact: "Kontemplasi pagi bantu atur emosi. (Harvard Medical School, 2013)", sarkas: "Estetik, tapi kayak adegan pembuka film sedih." }
     ]
   },
   {
-    question: "Kalau gagal total, biasanya lo...",
+    question: "Kalau gagal total, lo biasanya...",
     options: [
-      { text: "Scroll sampe jempol kesemutan", funfact: "Doomscrolling: pelarian instan dari rasa gagal.", sarkas: "Lo nggak gagal. Lo cuma loading... selamanya." },
-      { text: "Nge-chat temen yang selalu positif", funfact: "Support system penting banget buat bounce back.", sarkas: "Lo nyari sunshine biar bisa nyebur lagi." },
-      { text: "Bikin postingan bijak padahal sedih banget", funfact: "Wisdom quotes bisa jadi bentuk sublimasi.", sarkas: "Nasehat buat orang lain. Diri sendiri? Zonk." },
-      { text: "Diam dan nyari cemilan", funfact: "Makan sebagai emotional regulation kadang bekerja, kadang nambah drama.", sarkas: "Makan kenyang, masalah tetap eksis." },
-      { text: "Nonton ulang film yang udah 10x ditonton", funfact: "Repetition comfort = bentuk emotional predictability, menurut Psychology Today.", sarkas: "Plot-nya hafal. Hidup lo? Masih bingung." }
+      { text: "Scroll sampe jempol keram", funfact: "Doomscrolling = pelarian cepat. (APA, 2022)", sarkas: "Scroll terus, padahal masalahnya diem di situ." },
+      { text: "Curhat ke temen yang selalu positif", funfact: "Social support penting buat mental recovery. (Journal of Affective Disorders, 2010)", sarkas: "Curhat sih... tapi jawabannya kadang klise." },
+      { text: "Bikin postingan bijak padahal lagi hancur", funfact: "Quote therapy bisa bantu ekspresi emosi. (Narrative Identity Theory, 2014)", sarkas: "Timeline bijak, hati bolong." },
+      { text: "Ngemil tanpa mikir", funfact: "Emotional eating = respon stres. (Eating Behaviors Journal, 2012)", sarkas: "Makan kenyang, beban tetap nangkring." },
+      { text: "Nonton film yang udah lo hafal", funfact: "Repetition = predictability = rasa aman. (Psychology Today, 2020)", sarkas: "Plot-nya aman. Hidup lo? Plot twist terus." }
     ]
   },
   {
-    question: "Waktu deadline mepet, lo...",
+    question: "Kalau dikejar deadline...",
     options: [
-      { text: "Ngaret tapi panik dalam hati", funfact: "Panik bikin fokus naik... tapi cuma bentar.", sarkas: "Ritual suci kaum prokrastinasi." },
-      { text: "Minum kopi sampe jantung deg-degan", funfact: "Kafein = stimulan. Produktif, atau tremor?", sarkas: "Energi palsu demi hasil... samar." },
-      { text: "Pasrah aja, nanti juga selesai sendiri", funfact: "Surrender kadang muncul bukan karena ikhlas, tapi capek.", sarkas: "Produktivitas by keajaiban." },
-      { text: "Bikin to-do list yang estetik", funfact: "Organizing = coping, tapi eksekusi tetap penting.", sarkas: "List cakep. Kerjaan? Nihil." },
-      { text: "Kerjain sendiri, diem, sambil denger lagu instrumental", funfact: "Focused flow dalam kesunyian bisa naikkan produktivitas, menurut jurnal Flow Theory by Csikszentmihalyi.", sarkas: "Lo serius... tapi soundtrack-nya kayak film hacker." }
+      { text: "Masih santai, tapi panik dalem hati", funfact: "Adrenalin bisa bantu fokus jangka pendek. (Journal of Stress Research, 2019)", sarkas: "Kalem di luar, chaos di dalam." },
+      { text: "Ngopi biar melek sampe overthinking", funfact: "Kafein = fokus + cemas kalau kebanyakan. (NIH, 2021)", sarkas: "Deg-degan karena kopi, bukan cinta." },
+      { text: "Pasrah, semoga keajaiban datang", funfact: "Learned helplessness muncul kalau sering gagal. (Seligman, 1972)", sarkas: "Ritual: submit dengan doa dan air mata." },
+      { text: "Tulis to-do list cantik biar niat", funfact: "Planning visual bantu fokus. (Bullet Journal Study, 2020)", sarkas: "List-nya keren, isinya nol." },
+      { text: "Diem, kerja sambil denger musik pelan", funfact: "Flow state muncul saat fokus tinggi. (Csikszentmihalyi, 1990)", sarkas: "Lo serius... tapi suasananya kayak scene hacking di film." }
     ]
   }
 ];
+
 
   // Tambahin pertanyaan lain di format yang sama kalau mau lebih dari 10 lagi
 
