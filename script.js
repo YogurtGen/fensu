@@ -111,6 +111,40 @@ window.selectAnswer = function(opt) {
     container.innerHTML = `<p>Hasil Tes Kamu:</p><blockquote>${result}</blockquote>`;
   }
 };
+// Quiz data dan results tetep di atas...
+
+function showQuestion(container) {
+  const q = quizData[currentQuestion];
+  container.innerHTML = `
+    <p>${q.question}</p>
+    <div>
+      ${q.options.map((opt, i) => `<button onclick="selectAnswer('${opt}')">${opt}</button>`).join("")}
+    </div>
+  `;
+}
+
+function resetQuiz() {
+  currentQuestion = 0;
+  quizAnswers = [];
+  const container = document.getElementById('quiz-container');
+  showQuestion(container);
+}
+
+window.selectAnswer = function(opt) {
+  quizAnswers.push(opt);
+  currentQuestion++;
+  const container = document.getElementById('quiz-container');
+  if (currentQuestion < quizData.length) {
+    showQuestion(container);
+  } else {
+    const result = results[Math.floor(Math.random() * results.length)];
+    container.innerHTML = `
+      <p>Hasil Tes Kamu:</p>
+      <blockquote>${result}</blockquote>
+      <button onclick="resetQuiz()">Ulangi Tes</button>
+    `;
+  }
+};
 
 // ---------------- Mini Game Psikologi ----------------
 const minigameData = [
