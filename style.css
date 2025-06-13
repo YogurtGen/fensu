@@ -207,3 +207,14 @@ html, body {
     top: 110%;
   }
 }
+
+/* capek gw disable aja dah tool tip di mobile */
+
+@media (hover: none) and (pointer: coarse) {
+  /* Semua device touchscreen */
+  [data-tooltip]::after,
+  .tooltip::after {
+    display: none !important;
+  }
+}
+
