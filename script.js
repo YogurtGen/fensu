@@ -67,24 +67,47 @@ window.addEventListener('DOMContentLoaded', () => {
 const quizData = [
   {
     question: "Kalau lo jadi hewan, lo lebih cocok jadi...",
-    options: ["Capybara introvert", "Burung hantu overthinking", "Gorila yang chill", "Kucing yang dendam sama dunia"]
+    options: [
+      "Capybara introvert",
+      "Burung hantu filosofis",
+      "Gorila chill, tapi bisa bikin berantem",
+      "Kucing yang bete sama semua orang",
+      "Jadi manusia aja deh gw" 
+    ]
   },
   {
     question: "Lo minum kopi karena...",
-    options: ["Biar keliatan sibuk", "Emang suka rasa pahitnya hidup", "Ngikut tren", "Supaya alasan begadang lo valid"]
+    options: [
+      "Biar kelihatan sibuk",
+      "Suka rasa pahit hidup",
+      "Di ajak temen",
+      "Supaya alasan begadang lo resmi dan sah",
+      "Gak minum kopi, cukup minum air putih aja"
+    ]
   },
   {
     question: "Kalau ada masalah, reaksi pertama lo?",
-    options: ["Scroll TikTok 3 jam", "Nulis puisi sedih", "Menyalahkan zodiak", "Ngilang"]
-  }
+    options: [
+      "Scroll Sosmed sampe lupa masalah",
+      "Nulis puisi sedih yang gak bakal dibaca siapapun",
+      "Menyalahkan zodiak biar gak nyalahin diri sendiri",
+      "Ngilang tanpa kabar, biar masalah hilang juga",
+      "Pasrah ajalah"
+    ]
+  },
+  // Bisa Nambah pertanyaan ngikut yang di atas
 ];
+
 
 const results = [
   "🌀 Si Absurd Penuh Makna — Pikirannya lompat-lompat, tapi kadang ngena.",
   "🔥 Tukang Overthinking Produktif — Bisa nangis sambil bikin presentasi.",
   "🌚 Sok Kuat Tapi Rapuh — Luarnya sarkas, dalamnya nugget ayam.",
   "🍃 The Filosof Receh — Ngelawak sambil ngajak mikir eksistensi.",
-  "☕ Si Chill Tapi Gak Stabil — Mood lo ditentukan suhu AC."
+  "☕ Si Chill Tapi Gak Stabil — Mood lo ditentukan suhu AC.",
+  "🐶 Si Netral Santuy — Lo orangnya santai, gak mau ribet, tapi tetep bisa bikin orang bingung sama sikap lo yang gak jelas. Netral tapi penuh kejutan.",
+  "🎭 Sang Aktor Drama — Lo hidup kayak panggung sandiwara, penuh emosi dan dramatisme yang berlebihan. Kadang bikin capek orang, tapi gak bisa berhenti."
+  
 ];
 
 let currentQuestion = 0;
