@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pengalaman - Fensu Lix</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background: #fff;
+      color: #333;
+      font-family: 'Poppins', sans-serif;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeSlideIn 1s ease forwards;
+    }
+
+    @keyframes fadeSlideIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    header.experience-header {
+      background: linear-gradient(135deg, #ff6ec4, #7873f5);
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .blob-bg {
+      position: absolute;
+      top: -100px;
+      right: -100px;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle at center, #ff6ec4, transparent);
+      border-radius: 50%;
+      opacity: 0.4;
+      animation: blobMove 8s infinite alternate ease-in-out;
+      z-index: 0;
+    }
+
+    @keyframes blobMove {
+      0% { transform: scale(1) translate(0, 0); }
+      100% { transform: scale(1.2) translate(-50px, 50px); }
+    }
+
+    .experience-header h1,
+    .experience-header p {
+      position: relative;
+      z-index: 2;
+    }
+
+    .experience-intro {
+      max-width: 800px;
+      margin: 60px auto;
+      padding: 0 20px;
+      text-align: center;
+    }
+
+    .experience-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+      max-width: 1000px;
+      margin: auto;
+      padding: 0 20px 60px;
+    }
+
+    .experience-slider {
+      position: relative;
+      max-width: 720px;
+      width: 100%;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      touch-action: pan-y;
+    }
+
+    .experience-slider img {
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      border-radius: 12px;
+    }
+
+    .experience-slider img.active {
+      opacity: 1;
+      position: relative;
+    }
+
+    .slider-controls {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .slider-controls button {
+      background: #7873f5;
+      border: none;
+      color: white;
+      padding: 8px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      margin: 0 5px;
+      font-size: 0.9rem;
+    }
+
+    .slider-dots {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+    }
+
+    .slider-dots span {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      background: #ccc;
+      border-radius: 50%;
+      margin: 0 5px;
+      transition: background 0.3s ease;
+      cursor: pointer;
+    }
+
+    .slider-dots span.active {
+      background: #7873f5;
+    }
+
+    .experience-list {
+      max-width: 1000px;
+      margin: 60px auto;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    .experience-card {
+      background: linear-gradient(135deg, #fdfbff, #f3f3ff);
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .experience-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    }
+
+    .experience-card h3 {
+      color: #7873f5;
+      margin-bottom: 10px;
+    }
+
+    .experience-card p {
+      font-size: 0.95rem;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <header class="experience-header">
+    <div class="blob-bg"></div>
+    <h1>Pengalaman</h1>
+    <p>Beberapa perjalanan, proyek, dan momen yang ngebentuk siapa gue hari ini.</p>
+  </header>
+
+  <section class="experience-intro">
+    <h2>Penjelasan Singkat</h2>
+    <p>Gue aktif di berbagai kegiatan: edukasi, hiburan, presentasi publik, workshop psikologi, dan project kreatif lainnya. Di bawah ini, lo bisa lihat dokumentasi berupa video atau foto-foto dari momen-momen tersebut.</p>
+  </section>
+
+  <section class="experience-content">
+    <div class="experience-slider" id="slider">
+      <img src="images/exp1.jpg" class="active" alt="Workshop Psikologi">
+      <img src="images/exp2.jpg" alt="Behind the Scene Film">
+      <img src="images/exp3.jpg" alt="Pementasan Teater">
+    </div>
+    <div class="slider-controls">
+      <button onclick="prevSlide()">Sebelumnya</button>
+      <button onclick="nextSlide()">Berikutnya</button>
+    </div>
+    <div class="slider-dots" id="slider-dots"></div>
+  </section>
+
+  <section class="experience-list">
+    <div class="experience-card">
+      <h3>Film</h3>
+      <p>Terlibat dalam produksi film pendek dan dokumenter kampus. Jadi kru dan juga aktor kadang.</p>
+    </div>
+    <div class="experience-card">
+      <h3>Jurnalisme</h3>
+      <p>Menulis dan melaporkan isu-isu sosial dan psikologi di media kampus. Sarkas berfaedah.</p>
+    </div>
+    <div class="experience-card">
+      <h3>Bahasa Inggris</h3>
+      <p>Menjadi mentor dalam kegiatan speaking dan debat. Bikin yang gugup jadi pede ngomong.</p>
+    </div>
+    <div class="experience-card">
+      <h3>Teater</h3>
+      <p>Aktif di komunitas teater sebagai aktor dan penulis naskah. Hidup di panggung dan dialog batin.</p>
+    </div>
+  </section>
+
+  <script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.experience-slider img');
+    const dotsContainer = document.getElementById('slider-dots');
+
+    function createDots() {
+      slides.forEach((_, i) => {
+        const dot = document.createElement('span');
+        dot.addEventListener('click', () => goToSlide(i));
+        dotsContainer.appendChild(dot);
+      });
+      updateDots();
+    }
+
+    function updateDots() {
+      const dots = dotsContainer.querySelectorAll('span');
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === currentSlide);
+      });
+    }
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === index);
+      });
+      updateDots();
+    }
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    }
+
+    function prevSlide() {
+      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+      showSlide(currentSlide);
+    }
+
+    function goToSlide(index) {
+      currentSlide = index;
+      showSlide(currentSlide);
+    }
+
+    let startX = 0;
+    const slider = document.getElementById('slider');
+
+    slider.addEventListener('touchstart', e => {
+      startX = e.touches[0].clientX;
+    });
+
+    slider.addEventListener('touchend', e => {
+      const endX = e.changedTouches[0].clientX;
+      if (startX - endX > 50) nextSlide();
+      else if (endX - startX > 50) prevSlide();
+    });
+
+    setInterval(nextSlide, 5000);
+    createDots();
+  </script>
+</body>
+</html>
